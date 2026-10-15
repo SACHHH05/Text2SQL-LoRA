@@ -42,12 +42,12 @@ Author: Sachiin M
 - Training: Hugging Face Transformers + PEFT, 1 epoch, effective batch size 16, cosine schedule, fp16, LoRA on all attention and MLP projections (alpha = 2 x rank). The loss is computed only on the SQL answer, not the prompt.
 - Hardware: Google Colab T4 (15 GB).
 
-## Notebooks (run in order)
+## Notebook
 
-1. `01_data.ipynb`: load the dataset, split it, build the prompt format.
-2. `02_baseline.ipynb`: score the untuned model and create `utils.py` (scoring helpers).
-3. `03_lora_train_eval.ipynb`: train and evaluate LoRA r=16.
-4. `04_experiments.ipynb`: rank and learning-rate experiments.
-5. `05_qlora_7b.ipynb`: QLoRA on the 7B model.
+Everything is in `text2sql_lora.ipynb`, in sections: data, baseline, LoRA r=16, error analysis, rank and
+learning-rate experiments, and QLoRA on the 7B model. The scoring helpers are in `utils.py`.
 
-The notebooks save data, results and adapters to a `text2sql-lora` folder on Google Drive.
+Run it section by section, not with "Run all". Restart the runtime (Runtime > Restart session) before the
+7B QLoRA section, because the 7B model needs the whole GPU.
+
+The notebook saves data, results and adapters to a `text2sql-lora` folder on Google Drive.

@@ -3,8 +3,6 @@
 Fine-tuning small open LLMs to turn a plain-English question plus a table schema into a SQL query.
 Built as a hands-on project to learn LoRA and QLoRA on a single Colab T4 GPU.
 
-Author: Sachiin M
-
 ## Results
 
 300 held-out test questions. Exact match = same SQL as the reference after normalizing case and whitespace.
